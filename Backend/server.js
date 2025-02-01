@@ -6,7 +6,7 @@ const path = "./data.json";
 const date = moment().subtract(169, 'days').format();
 
 const commitMessages = [
-  "addded tour routes",
+  "addded book routes",
   
 ];
 
