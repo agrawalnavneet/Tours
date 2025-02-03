@@ -14,5 +14,4 @@ router.post("/book", async (req, res) => {
   res.status(201).json({ message: "Booking confirmed!" });
 });
 
-module.exports = router;
 //modules

@@ -3,10 +3,10 @@ import moment from "moment";
 import simpleGit from "simple-git";
 
 const path = "./data.json";
-const date = moment().subtract(168, 'days').format();
+const date = moment().subtract(167, 'days').format();
 
 const commitMessages = [
-  "addded book routes",
+  "addded  routes",
   
 ];
 
