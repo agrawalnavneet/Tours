@@ -16,9 +16,7 @@ mongoose.connect(MONGODB_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch((err) => console.error('Error connecting to MongoDB:', err));
   
-  app.get('/admin', (req, res) => {
-    res.send('<h1>Hello, this is the Admin Panel</h1>');
-  });
+
 
 
 
