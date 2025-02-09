@@ -3,10 +3,10 @@ import moment from "moment";
 import simpleGit from "simple-git";
 
 const path = "./data.json";
-const date = moment().subtract(162, 'days').format();
+const date = moment().subtract(161, 'days').format();
 
 const commitMessages = [
-  "added port number",
+  "Added MongoDB connection using Mongoose",
   
 ];
 
