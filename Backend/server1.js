@@ -16,8 +16,22 @@ mongoose.connect(MONGODB_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch((err) => console.error('Error connecting to MongoDB:', err));
   
+  app.get('/admin', (req, res) => {
+    res.send('<h1>Hello, this is the Admin Panel</h1>');
+  });
 
-
+const bookingSchema = new mongoose.Schema({
+  name: String,
+  telephone: String,
+  country: String,
+  members: Number,
+  address: String,
+  countryCode: String,
+  bookingDate: {
+    type: Date,
+    required: true, // Ensure the user provides a date
+  },
+});
 
 
 const PORT = process.env.PORT || 5000;
