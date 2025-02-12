@@ -29,7 +29,7 @@ const bookingSchema = new mongoose.Schema({
   countryCode: String,
   bookingDate: {
     type: Date,
-    required: true, // Ensure the user provides a date
+    
   },
 });
 const Booking = mongoose.model('Booking', bookingSchema);
