@@ -32,8 +32,9 @@ const bookingSchema = new mongoose.Schema({
     required: true, // Ensure the user provides a date
   },
 });
-
-
+const Booking = mongoose.model('Booking', bookingSchema);
+app.post('/api/bookings', async (req, res) => {
+  const { name, telephone, country, members, address, countryCode, bookingDate } = req.body;
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
