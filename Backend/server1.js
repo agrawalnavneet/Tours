@@ -4,14 +4,16 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-
 // Initialize Express app
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());  // To parse JSON bodies from incoming requests
 
-// Connect to MongoDB
+// MongoDB URI from environment variables
+const MONGODB_URI = process.env.MONGODB_URI;
+
+// Connect to MongoDB (without deprecated options)
 mongoose.connect(MONGODB_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch((err) => console.error('Error connecting to MongoDB:', err));
@@ -20,6 +22,7 @@ mongoose.connect(MONGODB_URI)
     res.send('<h1>Hello, this is the Admin Panel</h1>');
   });
 
+// Create a schema for the booking form with a single bookingDate field
 const bookingSchema = new mongoose.Schema({
   name: String,
   telephone: String,
@@ -29,13 +32,13 @@ const bookingSchema = new mongoose.Schema({
   countryCode: String,
   bookingDate: {
     type: Date,
-    
+    required: true, // Ensure the user provides a date
   },
 });
+
+// Create a model for the booking data
 const Booking = mongoose.model('Booking', bookingSchema);
+
+// API endpoint to handle form submission (POST request)
 app.post('/api/bookings', async (req, res) => {
   const { name, telephone, country, members, address, countryCode, bookingDate } = req.body;
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-})
