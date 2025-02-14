@@ -42,3 +42,17 @@ const Booking = mongoose.model('Booking', bookingSchema);
 // API endpoint to handle form submission (POST request)
 app.post('/api/bookings', async (req, res) => {
   const { name, telephone, country, members, address, countryCode, bookingDate } = req.body;
+
+  
+  // Log each field with its name when the form is submitted
+  console.log('Received Booking Data:');
+  console.log(`name: ${name}`);
+  console.log(`telephone: ${telephone}`);
+  console.log(`country: ${country}`);
+  console.log(`members: ${members}`);
+  console.log(`address: ${address}`);
+  console.log(`countryCode: ${countryCode}`);
+  console.log(`bookingDate: ${bookingDate}`);
+  
+  // Make sure we only store the `bookingDate` from the form, not the current date.
+  const parsedBookingDate = new Date(bookingDate);
