@@ -56,3 +56,8 @@ app.post('/api/bookings', async (req, res) => {
   
   // Make sure we only store the `bookingDate` from the form, not the current date.
   const parsedBookingDate = new Date(bookingDate);
+
+  // Validate that the date is a valid Date object
+  if (isNaN(parsedBookingDate)) {
+    return res.status(400).json({ error: 'Invalid booking date provided.' });
+  }
