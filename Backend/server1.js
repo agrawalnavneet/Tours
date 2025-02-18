@@ -43,7 +43,6 @@ const Booking = mongoose.model('Booking', bookingSchema);
 app.post('/api/bookings', async (req, res) => {
   const { name, telephone, country, members, address, countryCode, bookingDate } = req.body;
 
-  
   // Log each field with its name when the form is submitted
   console.log('Received Booking Data:');
   console.log(`name: ${name}`);
@@ -55,9 +54,27 @@ app.post('/api/bookings', async (req, res) => {
   console.log(`bookingDate: ${bookingDate}`);
   
   // Make sure we only store the `bookingDate` from the form, not the current date.
-  const parsedBookingDate = new Date(bookingDate);
+  const parsedBookingDate = new Date(bookingDate);  // Ensure that it's parsed correctly from the client
 
   // Validate that the date is a valid Date object
   if (isNaN(parsedBookingDate)) {
     return res.status(400).json({ error: 'Invalid booking date provided.' });
   }
+
+  const parsedBookingDate = new Date(bookingDate);  // Ensure that it's parsed correctly from the client
+
+  // Validate that the date is a valid Date object
+  if (isNaN(parsedBookingDate)) {
+    return res.status(400).json({ error: 'Invalid booking date provided.' });
+  }
+
+  // Create a new booking entry
+  const newBooking = new Booking({
+    name,
+    telephone,
+    country,
+    members,
+    address,
+    countryCode,
+    bookingDate: parsedBookingDate,  // Use the date provided by the user
+  });

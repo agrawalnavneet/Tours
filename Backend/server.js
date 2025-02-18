@@ -3,10 +3,10 @@ import moment from "moment";
 import simpleGit from "simple-git";
 
 const path = "./data.json";
-const date = moment().subtract(154, 'days').format();
+const date = moment().subtract(152, 'days').format();
 
 const commitMessages = [
-  "Included basic GET /admin route for admin panel",
+  "Enabled CORS and JSON parsing middleware",
   
 ];
 
