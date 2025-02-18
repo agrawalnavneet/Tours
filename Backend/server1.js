@@ -78,3 +78,12 @@ app.post('/api/bookings', async (req, res) => {
     countryCode,
     bookingDate: parsedBookingDate,  // Use the date provided by the user
   });
+
+   try {
+    // Save the booking data to MongoDB
+    await newBooking.save();
+    res.status(200).json({ message: 'Booking confirmed', booking: newBooking });
+  } catch (error) {
+    res.status(500).json({ error: 'Error saving booking' });
+  }
+});
