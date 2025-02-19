@@ -87,3 +87,4 @@ app.post('/api/bookings', async (req, res) => {
     res.status(500).json({ error: 'Error saving booking' });
   }
 });
+// Start the server
