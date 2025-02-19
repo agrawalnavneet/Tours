@@ -6,7 +6,7 @@ const path = "./data.json";
 const date = moment().subtract(151, 'days').format();
 
 const commitMessages = [
-  "Enabled CORS and JSON parsing middleware",
+  " Configured environment variables for MongoDB URI and server port",
   
 ];
 
