@@ -3,7 +3,7 @@ import moment from "moment";
 import simpleGit from "simple-git";
 
 const path = "./data.json";
-const date = moment().subtract(150, 'days').format();
+const date = moment().subtract(149, 'days').format();
 
 const commitMessages = [
   " Configured environment variables for MongoDB URI and server port",

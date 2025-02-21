@@ -61,13 +61,6 @@ app.post('/api/bookings', async (req, res) => {
     return res.status(400).json({ error: 'Invalid booking date provided.' });
   }
 
-  const parsedBookingDate = new Date(bookingDate);  // Ensure that it's parsed correctly from the client
-
-  // Validate that the date is a valid Date object
-  if (isNaN(parsedBookingDate)) {
-    return res.status(400).json({ error: 'Invalid booking date provided.' });
-  }
-
   // Create a new booking entry
   const newBooking = new Booking({
     name,
@@ -79,7 +72,7 @@ app.post('/api/bookings', async (req, res) => {
     bookingDate: parsedBookingDate,  // Use the date provided by the user
   });
 
-   try {
+  try {
     // Save the booking data to MongoDB
     await newBooking.save();
     res.status(200).json({ message: 'Booking confirmed', booking: newBooking });
@@ -87,7 +80,10 @@ app.post('/api/bookings', async (req, res) => {
     res.status(500).json({ error: 'Error saving booking' });
   }
 });
-// Start the server
+
+
+
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
