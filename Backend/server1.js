@@ -62,16 +62,6 @@ app.post('/api/bookings', async (req, res) => {
   }
 
 
-  const newBooking = new Booking({
-    name,
-    telephone,
-    country,
-    members,
-    address,
-    countryCode,
-    bookingDate: parsedBookingDate,  // Use the date provided by the user
-  });
-
   try {
     // Save the booking data to MongoDB
     await newBooking.save();
