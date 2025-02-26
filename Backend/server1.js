@@ -61,7 +61,7 @@ app.post('/api/bookings', async (req, res) => {
     return res.status(400).json({ error: 'Invalid booking date provided.' });
   }
 
-
+// added booking schema
   const newBooking = new Booking({
     name,
     telephone,
