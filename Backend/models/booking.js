@@ -1,31 +1,23 @@
-import mongoose from "mongoose";
+
+const mongoose = require('mongoose');
 
 const bookingSchema = new mongoose.Schema({
-  user: {
-    type: String,
-    required: true
+  name: String,
+  telephone: String,
+  country: String,
+  members: Number,
+  address: String,
+  countryCode: String,
+  confirmed: { type: Boolean, default: false }, // Confirmation status
+  bookingDate: { 
+    type: Date, 
+    required: true,  // Ensure user provides a valid booking date
+  }, // The actual date of the booking provided by the user
+  createdAt: { 
+    type: Date, 
+    default: Date.now,  // Automatically set the creation time when booking is saved
   },
-  tour: {
-    type: String,
-    required: true
-  },
-  date: {
-    type: Date,
-    required: true
-  },
-  seats: {
-    type: Number,
-    required: true
-  },
-  status: {
-    type: String,
-    enum: ['booked', 'cancelled', 'completed'],
-    default: 'booked'
-  }
-}, {
-  timestamps: true 
 });
 
-const Booking = mongoose.model("Booking", bookingSchema);
-
-export default Booking;
+const Booking = mongoose.model('Booking', bookingSchema);
+module.exports = Booking;
