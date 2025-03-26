@@ -1,0 +1,15 @@
+{
+  "name": "austilia_version_3_remove_map--2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "node": "^20.19.0"
+  }
+}
