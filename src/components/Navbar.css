@@ -1,0 +1,253 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; 
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 0px rgb(0, 0, 0), 0 4px 10px rgb(0, 0, 0); 
+  transition: all 0.3s ease;
+  border-radius: 0px 0px 2px 2px;
+  cursor: pointer;
+}
+
+/* Light Mode Font Colors */
+.navbar.light .logo,
+.navbar.light .nav-links li a,
+.navbar.light .dark-mode-btn {
+  color: #000; /* Black text for light mode */
+}
+
+/* Dark Mode Styles */
+.navbar.dark {
+  background-color: #020111; /* YE DARK MOOD KA PRIMARY COLOR HAIN DONT CHANE WHILE PRODUCTION */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2), 0 4px 10px rgb(255, 255, 255); /* Adding a bottom shadow with a greenish tint */
+}
+
+.navbar.dark .logo,
+.navbar.dark .nav-links li a,
+.navbar.dark .dark-mode-btn {
+  color: #fff; /* White text for dark mode */
+}
+
+body.dark-mode {
+  background-color: #020111; /* Dark background for the body */
+  color: #fff; 
+}
+
+/* Logo Styling */
+.navbar .logo {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  justify-content: center; /* This centers the nav links horizontally */
+  flex-grow: 1; /* Allow the nav-links container to take up available space */
+}
+/* NAVBAR LOGO SHADOW FOR DARK MODE */
+.navbar img {
+  /* height: 60px; Adjust size */
+  /* width: auto; */
+  /* filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8)); White glow effect */
+  /* transition: transform 0.3s ease-in-out; */
+  
+}
+
+/* Navigation Links - Individual Items */
+.nav-links li {
+  margin-left: 2px;
+}
+
+.nav-links li a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ff9900;
+}
+
+/* Dark Mode Button with Sun and Moon Emojis */
+.dark-mode-btn {
+  font-size: 1.5rem; /* Larger size for the emoji */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 20px; /* Space from the logo or before hamburger icon */
+}
+
+.dark-mode-btn:hover {
+  color: #ff9900;
+}
+
+.dark-mode-btn:active {
+  color: #e68900;
+}
+
+/* Hamburger Icon for Mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 4px;
+  background-color: #000; /* Default black for light mode */
+  transition: all 0.3s ease;
+}
+
+.navbar.dark .hamburger .line {
+  background-color: #fff; /* White for dark mode */
+}
+
+.hamburger.active .line1 {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburger.active .line2 {
+  opacity: 0;
+}
+
+.hamburger.active .line3 {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -70%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 40px;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .nav-links.active {
+    transform: translateX(100%);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* Hide Dark Mode Button when Menu is Active in Mobile */
+  .nav-links.active .dark-mode-btn {
+    display: none; /* Hide Dark Mode Button when menu is open */
+  }
+
+  .dark-mode-btn {
+    position: relative;
+    left: 70px;
+    top: 0px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    padding: 2px;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: black;
+  }
+
+  .dark-mode-btn {
+    position: relative;
+    left: 1000px;
+    top: 0px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    padding: 2px;
+  }
+  .close-btn {
+    display: none;
+  }
+}
+
+.navbar {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links li a.active {
+  color: #ff9900;
+  font-weight: bold;
+}
+
+
+
+
+/* dark mood */
+nav img{
+  height: 35px;
+  padding-left: 0px;
+  margin-top: 0%;
+  
+}

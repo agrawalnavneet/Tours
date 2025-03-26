@@ -1,0 +1,68 @@
+/* Default Light Mode Styles */
+.entire-heading {
+    /* background-color: rgb(61, 218, 41); Fallback color */
+    text-align: center;
+    /* margin: 2rem 0; */
+    font-family:sans-serif;
+    border:white;
+  }
+  
+  .heading-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black; /* Default text color for light mode */
+  }
+  
+  .heading-paragraph {
+    font-size: 1rem;
+    color: black; /* Default text color for light mode */
+    margin-top: 0.5rem;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode .heading-title,
+  body.dark-mode .heading-paragraph {
+    color: white; /* Text color for dark mode */
+  }
+  
+  /* Skeleton Loader Styles */
+  .skeleton-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0rem 0;
+  }
+  
+  .skeleton {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  .skeleton-title {
+    width: 180px;
+    height: 32px;
+  }
+  
+  .skeleton-paragraph {
+    width: 240px;
+    height: 24px;
+  }
+  
+  /* Shimmer Animation */
+  @keyframes shimmer {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+
+  

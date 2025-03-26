@@ -1,0 +1,106 @@
+.stats-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.observation-section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  font-size: 36px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.section-paragraph {
+  font-size: 18px;
+  color: #fefefe;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 30px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.stats-circle {
+  width: 200px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  transition: transform 0.3s ease;
+}
+
+.stats-circle.orange {
+  background-color: #ffba82;
+}
+
+.stats-circle.purple {
+  background-color: #c7b3ff;
+}
+
+.stats-circle.green {
+  background-color: #a3e6a3;
+}
+
+.stats-circle:hover {
+  transform: scale(1.05);
+}
+
+.stats-content {
+  text-align: center;
+  color: #764646;
+  font-weight: bold;
+}
+
+.stats-number {
+  font-size: 36px;
+  margin: 0;
+  color: #333;
+}
+
+.stats-label {
+  font-size: 16px;
+  margin: 10px 0 0;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .stats-circle {
+    width: 150px;
+    height: 90px;
+  }
+
+  .stats-number {
+    font-size: 24px;
+  }
+
+  .stats-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-circle {
+    width: 100px;
+    height: 60px;
+  }
+
+  .stats-number {
+    font-size: 18px;
+  }
+
+  .stats-label {
+    font-size: 10px;
+  }
+}

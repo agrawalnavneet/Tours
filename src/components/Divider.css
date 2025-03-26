@@ -1,0 +1,7 @@
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc; /* Light gray color for the line */
+    margin: 20px 0; /* Adds some space above and below the line */
+  }
+  

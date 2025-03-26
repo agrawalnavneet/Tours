@@ -1,0 +1,604 @@
+/* General Styles */
+body {
+  background-color: #ffffff; 
+  color: #333; 
+  font-family: Arial, sans-serif;
+}
+.booking-form-container h3 span {
+  color: orange;
+  font-family: sans-serif;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+
+.booking-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+
+
+.booking-form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 91%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #020111 ; /* Dark background */
+  color: #fff; /* White text */
+}
+
+body.dark-mode .booking-form-container {
+  background-color: rgba(28, 26, 26, 0.8); /* Dark form background */
+  color: #fff; /* White text for form */
+  border: 1px solid or;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* White shadow */
+}
+
+body.dark-mode .booking-form-container input,
+body.dark-mode .booking-form-container select {
+  background-color: #000000; /* Darker input background */
+  color: #ffffff; /* White text inside input */
+  border: 1px solid #777; /* Lighter border for dark mode */
+}
+
+body.dark-mode .confirm-booking-btn {
+  background-color: #fa8500; /* Purple color for confirm button in dark mode */
+}
+
+body.dark-mode .confirm-booking-btn:hover {
+  background-color: #fa8500; /* Change to orange on hover */
+}
+
+body.dark-mode .close-form-btn {
+  color: #ffffff; /* Close button color */
+}
+
+/* Light Mode Styles (default) */
+body .booking-form-container {
+  background: white; /* Light background for form */
+  color: #333; /* Dark text for form */
+}
+
+body .booking-form-container input,
+body .booking-form-container select {
+  background-color: #fff; /* Light input background */
+  color: #333; /* Dark text inside input */
+  border: 1px solid #ccc; /* Standard light border */
+}
+
+body .confirm-booking-btn {
+  background-color: #fa8500; /* Orange color for confirm button in light mode */
+}
+
+body .confirm-booking-btn:hover {
+  background-color: #6b2cb7; /* Purple color on hover */
+}
+
+body .close-form-btn {
+  color: #fa8500; /* Close button color */
+}
+
+/* Close Button */
+.close-form-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fa8500;
+  font-weight: bold;
+}
+
+/* Form Input Fields */
+.booking-form-container input,
+.booking-form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Labels for Inputs */
+.booking-form-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Telephone Section */
+.telephone-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.telephone-container select {
+  width: 30%;
+  margin-right: 2px;
+}
+
+.telephone-container input {
+  width: 65%; /* Adjust input field to fit the layout */
+}
+
+/* Confirm Booking Button */
+.confirm-booking-btn {
+  padding: 12px;
+  background-color: #fa8500;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.confirm-booking-btn:hover {
+  background-color: #6b2cb7; /* Change color on hover */
+}
+
+/* Loader Button - Centered large button */
+.loading-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #fa8500;
+  border: none;
+  border-radius: 4px;
+  cursor: not-allowed;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Booking Success Styling */
+/* Booking Success Popup */
+
+/* START */
+/* .booking-success {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #fdfdfd, #f5f5f5);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+  animation: fadeIn 0.5s ease-in-out;
+} */
+/* END */
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Success Heading */
+.booking-success h3 {
+  font-size: 1.5rem;
+  color: #28a745; /* Success green color */
+  margin-bottom: 15px;
+}
+
+/* Success Description */
+.booking-success p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Payment Buttons Container */
+.payment-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Payment Buttons */
+.payment-option-btn {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ff8c00, #ffa500);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  flex: 1; /* Make buttons equal in width */
+  text-align: center;
+}
+
+.payment-option-btn:hover {
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .payment-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .payment-option-btn {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booking-form-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .confirm-booking-btn {
+    font-size: 0.9rem;
+    padding: 0px;
+  }
+
+  .telephone-container .country-code {
+    width: 30%;
+    font-size: smaller;
+  }
+}
+
+
+
+
+
+/* Progress Bar Container */
+.progress-bar-container {
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(90deg, #eee, #ddd);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 8px; /* Add some space for better alignment */
+}
+
+/* Progress Bar Fill */
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #0331d8, #ffa500, #01db0c);
+  background-size: 200% 100%; /* For gradient animation */
+  width: 0;
+  animation: fillProgress 2s ease-in-out forwards, shine 1.5s infinite;
+  border-radius: 6px; /* Smooth edges */
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.6), 0 0 15px rgba(255, 165, 0, 0.4); /* Glow effect */
+}
+
+/* Smooth Fill Animation */
+@keyframes fillProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Gradient Shine Animation */
+@keyframes shine {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* Optional: Progress Button Enhancements */
+.confirm-booking-btn {
+  padding: 12px;
+  background-color: #fa8500;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.confirm-booking-btn.progress-active {
+  background-color:  #6b2cb7; /* Lighter orange during progress */
+}
+
+/* Custom Message Div */
+.custom-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white; 
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+  color: #333;
+}
+
+.custom-message h4 {
+  color: #fa8500; 
+  margin-bottom: 10px;
+}
+
+.custom-message p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.close-message-btn {
+  background-color: #fa8500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.close-message-btn:hover {
+  background-color: #d57d00;
+}
+
+/* Payment Buttons */
+.payment-option-btn {
+  padding: 10px 20px;
+  background-color: #fa8500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.payment-option-btn:hover {
+  background-color: #d57d00;
+}
+
+
+
+
+
+/* UPDATE THE CONFIRM */
+/* Progress Bar Container */
+.progress-bar-container {
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(90deg, #eee, #ddd);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 8px; 
+}
+
+/* Progress Bar Fill */
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #0331d8, #ffa500, #01db0c);
+  background-size: 200% 100%; 
+  width: 0;
+  animation: fillProgress 2s ease-in-out forwards, shine 1.5s infinite;
+  border-radius: 6px; 
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.6), 0 0 15px rgba(255, 165, 0, 0.4); 
+}
+
+/* Smooth Fill Animation */
+@keyframes fillProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Gradient Shine Animation */
+@keyframes shine {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* Progress Text */
+.progress-bar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Optional: Progress Button Enhancements */
+.confirm-booking-btn {
+  padding: 12px;
+  background-color: #fa8500;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.confirm-booking-btn.progress-active {
+  background-color: #6b2cb7; /* Lighter orange during progress */
+}
+
+/* Custom Message Div */
+.custom-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white; /* Adjust to match your website's theme */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+  color: #333;
+}
+
+.custom-message h4 {
+  color: #fa8500; /*ye primary code hian*/
+  margin-bottom: 10px;
+}
+
+.custom-message p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.close-message-btn {
+  background-color: #fa8500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.progress-bar-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.progress-bar-text {
+  margin-left: 10px; 
+  white-space: nowrap; 
+}
+
+
+.close-message-btn:hover {
+  background-color: #d57d00;
+}
+
+/* Payment Buttons */
+.payment-option-btn {
+  padding: 10px 20px;
+  background-color: #fa8500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.payment-option-btn:hover {
+  background-color: #d57d00;
+}
+
+.booking-success {
+  text-align: center;
+  padding: 20px;
+  background: url('../assets/booking-success.gif') center center / cover no-repeat; /* Start with GIF background */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+  animation: backgroundTransition 2s ease-in-out forwards, fadeIn 0.5s ease-in-out;
+}
+.booking-success a{
+  text-decoration: none;
+  color: #ff0505;
+  font-weight: bold;
+}
+
+
+
+
+@keyframes backgroundTransition {
+  0% {
+    background: url('../assets/booking-success.gif') center center / cover no-repeat;
+  }
+  100% {
+    background: linear-gradient(135deg, #fdfdfd, #f5f5f5);
+  }
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

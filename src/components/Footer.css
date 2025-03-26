@@ -1,0 +1,94 @@
+/* General Footer Styles */
+.footer {
+  background-color: var(--footer-bg);
+  /* background-color: rgb(13, 13, 13); */
+  /* color: var(--footer-text); */
+  /* color: white; */
+  /* set backgound image */
+  background-image: url('../assets/lens1.png');
+  background-size:cover;
+  /* background-Attachment: "fixed"; */
+  background-attachment: fixed;
+  /* position: fixed; */
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  font-family: sans-serif;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items */
+}
+
+.footer-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  text-align: center; /* Center align text in lists */
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  text-align: center; /* Center align text in paragraphs */
+}
+
+.footer-section .social-icons {
+  display: flex;
+  justify-content: center; /* Center align social icons */
+  gap: 1rem;
+}
+
+.footer-section .social-icons a {
+  color: var(--footer-icon-color);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section .social-icons a:hover {
+  color: var(--footer-icon-hover-color);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--footer-border);
+  padding-top: 1rem;
+}
+
+/* Responsive Design for Mobile View  yaha wala design ko ak  cherdna nhin hain */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack sections vertically */
+  }
+
+  .footer-section {
+    flex: 1 1 auto;
+    text-align: center; /* Center-align text in mobile view */
+  }
+}
+@media (max-width: 1920px) {
+  .footer {
+    flex-direction: column; /* Stack sections vertically ye ak baar documents se pard leyna hain  */
+  }
+
+  .footer-section {
+    flex: 1 1 auto;
+    text-align: center; /* Center-align text in mobile view */
+  }
+}

@@ -1,0 +1,46 @@
+.contact-buttons {
+    position: fixed;
+    right: 20px;
+    top: 30%; /* Changed to 30% from the top */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000; /* Ensures the buttons remain on top of other elements */
+  }
+  
+  .contact-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .contact-buttons a.phone-button {
+    background-color: #00a7fa; /* Phone button blue */
+  }
+  
+  .contact-buttons a:hover {
+    transform: scale(1.1);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .contact-buttons {
+      right: 10px;
+      top: 30%; /* Ensures 30% from the top on mobile as well */
+    }
+  
+    .contact-buttons a {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+  }
+  
