@@ -7,13 +7,7 @@ const date = moment().subtract(104, 'days').format();
 
 const commitMessages = [
   "adding Schema",
-  "added new API route",
-  "updated controller logic",
-  "fixed minor bug",
-  "improved error handling",
-  "updated booking model",
-  "refactored folder structure",
-  "updated documentation"
+  
 ];
 
 const randomMessage = commitMessages[Math.floor(Math.random() * commitMessages.length)];
